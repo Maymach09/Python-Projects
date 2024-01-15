@@ -1,1 +1,1 @@
-This repository contains all the python programs I created while taking the python course.
+This is a love calculator. Go ahead and check the score with your soulmate!
