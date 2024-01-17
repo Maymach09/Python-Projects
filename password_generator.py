@@ -53,5 +53,5 @@ for out_num in range(1, total_char+1):
             print("symbol: ", random_char)
 
 
-    print(f"Here is the  password: {random_char}")
+print(f"Here is the  password: {random_char}")
     
