@@ -12,46 +12,22 @@ nr_letters= int(input("How many letters would you like in your password?\n"))
 nr_symbols = int(input("How many symbols would you like?\n"))
 nr_numbers = int(input("How many numbers would you like?\n"))
 
-total_char = nr_letters + nr_numbers + nr_symbols
-
 #Create a string of random letters
-random_char = ""
-letter_count = 0
-num_count = 0
-sym_count = 0
+password_list = []
+password = ""
 
-for out_num in range(1, total_char+1):
-    ran_no_outer_list = random.randint(0, len(characters)-1)
-    
-    print(f"Loop: {out_num}")
+for char in range(1, nr_letters + 1):
+  password_list.append(random.choice(letters))
 
-    if ran_no_outer_list == 0:
-        if letter_count == nr_letters:
-            continue
-        else:
-            ran_no_inner_list = random.randint(0, len(letters)-1)
-            random_char += characters[ran_no_outer_list][ran_no_inner_list]
-            letter_count += 1
-            print("letter: ", random_char)
+for char in range(1, nr_symbols + 1):
+  password_list += random.choice(symbols)
 
-    elif ran_no_outer_list == 1:
-        if num_count == nr_numbers:
-            continue
-        else:
-            ran_no_inner_list = random.randint(0, len(numbers)-1)
-            random_char += characters[ran_no_outer_list][ran_no_inner_list]
-            num_count += 1
-            print("number: ", random_char)
-        
-    elif ran_no_outer_list == 2:
-        if sym_count == nr_symbols:
-            continue
-        else:
-            ran_no_inner_list = random.randint(0, len(symbols)-1)
-            random_char += characters[ran_no_outer_list][ran_no_inner_list]
-            sym_count += 1
-            print("symbol: ", random_char)
+for char in range(1, nr_numbers + 1):
+  password_list += random.choice(numbers)
 
+random.shuffle(password_list)
 
-print(f"Here is the  password: {random_char}")
-    
+for char in password_list:
+  password += char
+
+print(f"Your password is: {password}")
