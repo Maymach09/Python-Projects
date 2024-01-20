@@ -80,16 +80,16 @@ while not end_of_game:
         lives -= 1
         if lives == 0:
             end_of_game = True
-        print(stages[lives])
-
+            print("You Lose")
+    
+    #Join all the elements in a list and turn it into a string
     print(f"{' '.join(display)}")
     
     if '_' not in display:
         end_of_game = True
         print("You Won.")
-    elif '_' in display:
-        end_of_game = True
-        print('You Lose')
+
+    print(stages[lives])
 
 
     
