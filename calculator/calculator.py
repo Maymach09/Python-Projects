@@ -1,8 +1,6 @@
 from art import logo
 import os
 
-print(logo)
-
 #To clear the screen
 def clear_screen():
     if os.name == 'nt':
@@ -32,7 +30,8 @@ operations = {
 }
 
 def calculator():
-    number1 = int(input("What's the first number? "))
+    print(logo)
+    number1 = float(input("What's the first number? "))
         
     for op in operations:
         print(op)
@@ -41,7 +40,7 @@ def calculator():
     while should_continue:
         symbol = input("\nSelect operator: ")
         calc = operations[symbol]
-        number2 = int(input("\nWhat's the next number? "))
+        number2 = float(input("\nWhat's the next number? "))
         print("\nPick up an operation from the list below:")
         result = calc(number1, number2)
         print(f"\n{number1} {symbol} {number2} = {result}\n")
